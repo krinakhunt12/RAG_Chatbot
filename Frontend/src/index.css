@@ -4,26 +4,25 @@
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #09090b; /* Zinc-950 */
-    color: #e4e4e7; /* Zinc-200 for excellent body readability */
+    color: #f4f4f5; /* Zinc-100 for high readability */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #ffffff; /* Sharp white contrast for headings */
+    letter-spacing: -0.02em;
+    color: #ffffff;
   }
 }
 
 /* Custom text selection highlight */
 ::selection {
-  background-color: rgba(6, 182, 212, 0.35); /* Glowing cyan highlight */
+  background-color: rgba(6, 182, 212, 0.3); /* Glowing cyan highlight */
   color: #ffffff;
 }
 
-/* Custom scrollbars for a premium feel */
+/* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -34,15 +33,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a; /* Zinc-800 */
+  background: #18181b; /* Zinc-900 */
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46; /* Zinc-700 */
+  background: #0891b2; /* Cyan-600 */
 }
 
-/* Float Animation for background blobs */
+/* Float Animation for background ambient blobs */
 @keyframes float {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -51,7 +50,7 @@
     transform: translate(30px, -50px) scale(1.1);
   }
   66% {
-    transform: translate(-20px, 20px) scale(0.95);
+    transform: translate(-30px, 20px) scale(0.95);
   }
   100% {
     transform: translate(0px, 0px) scale(1);
@@ -59,7 +58,7 @@
 }
 
 .animate-blob {
-  animation: float 10s infinite alternate ease-in-out;
+  animation: float 12s infinite alternate ease-in-out;
 }
 
 .animation-delay-2000 {
@@ -70,15 +69,97 @@
   animation-delay: 4s;
 }
 
-/* Glassmorphic border glow utility */
-.glow-border-cyan {
-  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.15);
+/* Grid overlay background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glassmorphism elements */
+.glass-panel {
+  background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(6, 182, 212, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(6, 182, 212, 0.18);
+  box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.1);
+}
+
+/* Custom premium glows */
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
 }
 
 .glow-btn-cyan {
-  box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glow-btn-cyan:hover {
-  box-shadow: 0 0 25px -3px rgba(6, 182, 212, 0.7);
+  box-shadow: 0 0 30px -2px rgba(34, 211, 238, 0.65);
+  transform: translateY(-1px);
 }
+
+/* Typewriter animation support */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: cursor-blink 0.8s infinite;
+}
+
+/* Shine effect */
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 70%,
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+}
+
+.hover-shine:hover::after {
+  left: 150%;
+}
+
+/* Scroll animation reveal transitions */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay modifiers for sequential card animations */
+.reveal-delay-75 { transition-delay: 75ms; }
+.reveal-delay-150 { transition-delay: 150ms; }
+.reveal-delay-225 { transition-delay: 225ms; }
+.reveal-delay-300 { transition-delay: 300ms; }
+.reveal-delay-375 { transition-delay: 375ms; }
+.reveal-delay-450 { transition-delay: 450ms; }
