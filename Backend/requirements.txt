@@ -1,0 +1,13 @@
+streamlit
+chromadb
+sentence-transformers
+numpy
+openai
+python-dotenv
+pdfplumber
+PyPDF2
+torch
+torchvision
+fastapi
+uvicorn
+python-multipart

@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #09090b; /* Zinc-950 */
+    color: #e4e4e7; /* Zinc-200 for excellent body readability */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #ffffff; /* Sharp white contrast for headings */
+  }
+}
+
+/* Custom text selection highlight */
+::selection {
+  background-color: rgba(6, 182, 212, 0.35); /* Glowing cyan highlight */
+  color: #ffffff;
+}
+
+/* Custom scrollbars for a premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a; /* Zinc-800 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46; /* Zinc-700 */
+}
+
+/* Float Animation for background blobs */
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: float 10s infinite alternate ease-in-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Glassmorphic border glow utility */
+.glow-border-cyan {
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.15);
+}
+
+.glow-btn-cyan {
+  box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.5);
+}
+
+.glow-btn-cyan:hover {
+  box-shadow: 0 0 25px -3px rgba(6, 182, 212, 0.7);
+}

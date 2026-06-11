@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and DBs
+Backend/chroma_db/
+Backend/rag_session.pkl
+
+# Environments
+.env
+Backend/.env
+.venv/
+venv/
+ENV/
+env/
+
+# Node modules and build output
+Frontend/node_modules/
+Frontend/dist/
+Frontend/tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
